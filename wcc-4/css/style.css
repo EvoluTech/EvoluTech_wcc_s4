@@ -1,9 +1,0 @@
-:root{
-    --theme-claire: hsl(334, 88%, 51%);
-    --theme-dark : hsl(332, 60%, 36%);
-    --rose : hsl(34, 91%, 61%);
-}
-
-*{
-    font-family: Tahoma, sans-serif;
-}
