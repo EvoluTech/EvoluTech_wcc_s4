@@ -1,0 +1,129 @@
+.backload {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: rgb(252, 252, 252);
+  width: 100%;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  height: 200vh;
+  z-index: 99999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 25%;
+  margin-left:0;
+  margin-right: 0;
+  z-index: 10000;
+}
+
+
+@media screen and (max-width: 420px) {
+  .backload h3 {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    z-index: 10000;
+    color: #6657f8;
+    font-size: 1.8em;
+    font-weight: 800;
+    animation: miova 1s infinite;
+  }
+  .loader {
+    position: absolute;
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+    z-index: 10000;
+  }
+}
+
+@keyframes miova {
+  0% {
+    -webkit-transform: translateY(0.95px);
+    -moz-transform: translateY(0.95px);
+  }
+  50% {
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(0.95px);
+    -moz-transform: translateY(0.95px);
+  }
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: var(--theme-claire);
+  box-shadow: 30px 0 0 #ffb224;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: var(--theme-dark);
+  box-shadow: 30px 0 0 #b635b0;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -moz-transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: rotate(720deg) scale(0.8);
+    -moz-transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 hsl(34, 91%, 61%);
+  }
+  50% {
+    box-shadow: 0 0 0 hsl(34, 73%, 55%);
+    margin-bottom: 0;
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 hsl(34, 93%, 59%);
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 hsl(334, 82%, 33%);
+  }
+  50% {
+    box-shadow: 0 0 0 hsl(334, 83%, 47%);
+    margin-top: -20px;
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 hsl(334, 84%, 44%);
+    margin-top: 0;
+  }
+}
