@@ -160,6 +160,7 @@
 }
 
 .progress-text{
+     z-index: 99999999999;
     color: rgb(136, 136, 136);
     font-size: small;
 }
